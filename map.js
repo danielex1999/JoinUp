@@ -1,9 +1,14 @@
 //Variables
 
+let reservar="localhost:8080/ReserveService/Add"
 let prueba = "http://localhost:8080/Parkinglocal/Showall";
 let locales = [];
 const welcome= document.querySelector('.welcome')
 const reserve= document.querySelector('.reserve-data')
+const name_parking=document.querySelector('.title h1')
+const desc_parking=document.querySelector('.description h1')
+
+
 
 //functions
 
@@ -40,7 +45,9 @@ function initMap() {
           google.maps.event.addListener(marker, "click", function (e) {
             console.log(locales[index].description)
             welcome.style.display='none'
-            reserve.style.display='block'
+            reserve.style.display='flex'
+            name_parking.innerHTML = locales[index].name
+            desc_parking.innerHTML = locales[index].description
           });
         })(marker, locales);
       }
