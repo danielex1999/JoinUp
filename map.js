@@ -61,6 +61,8 @@ button.addEventListener("click", () => {
   })
     .then((res) => res.json())
     .then((datos) => console.log(datos));
+
+  alert("Reserva exitosa");
 });
 
 //functions
